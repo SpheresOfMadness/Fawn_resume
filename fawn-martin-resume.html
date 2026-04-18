@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fawn Martin Resume</title>
+  <meta name="description" content="Web-style resume for Fawn Martin" />
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=zodiak@400,700&display=swap" rel="stylesheet" />
+  <style>
+    :root, [data-theme="light"] {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem; --space-16: 4rem; --space-20: 5rem;
+      --color-bg: #f7f6f2; --color-surface: #f9f8f5; --color-surface-2: #fbfbf9; --color-surface-offset: #f3f0ec; --color-border: #d4d1ca; --color-divider: #dcd9d5;
+      --color-text: #28251d; --color-text-muted: #6f6c66; --color-text-faint: #9e9a93; --color-text-inverse: #f9f8f4;
+      --color-primary: #01696f; --color-primary-hover: #0c4e54; --color-primary-highlight: #cedcd8;
+      --radius-sm: 0.375rem; --radius-md: 0.5rem; --radius-lg: 0.75rem; --radius-xl: 1rem; --radius-full: 9999px;
+      --shadow-sm: 0 1px 2px rgba(27, 25, 20, 0.08); --shadow-md: 0 8px 24px rgba(27, 25, 20, 0.10); --shadow-lg: 0 18px 40px rgba(27, 25, 20, 0.12);
+      --font-body: 'General Sans', system-ui, sans-serif; --font-display: 'Zodiak', Georgia, serif;
+      --content: 1120px;
+    }
+    [data-theme="dark"] {
+      --color-bg: #171614; --color-surface: #1c1b19; --color-surface-2: #201f1d; --color-surface-offset: #22211f; --color-border: #393836; --color-divider: #2b2a28;
+      --color-text: #e5e2db; --color-text-muted: #b1aba0; --color-text-faint: #7b756b; --color-text-inverse: #171614;
+      --color-primary: #4f98a3; --color-primary-hover: #77aeb7; --color-primary-highlight: #283538;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.25); --shadow-md: 0 10px 28px rgba(0,0,0,0.34); --shadow-lg: 0 18px 40px rgba(0,0,0,0.42);
+    }
+    *,:before,:after{box-sizing:border-box;margin:0;padding:0}
+    html{-webkit-text-size-adjust:none;text-size-adjust:none;scroll-behavior:smooth}
+    body{min-height:100dvh;font-family:var(--font-body);font-size:var(--text-base);line-height:1.6;color:var(--color-text);background:
+      radial-gradient(circle at top right, color-mix(in srgb, var(--color-primary) 10%, transparent), transparent 32%),
+      linear-gradient(180deg, var(--color-bg), var(--color-surface));}
+    img,svg{display:block;max-width:100%}
+    a{color:inherit}
+    button{font:inherit;border:none;background:none;color:inherit;cursor:pointer}
+    :focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm)}
+    .skip-link{position:absolute;left:-9999px;top:auto}
+    .skip-link:focus{left:var(--space-4);top:var(--space-4);background:var(--color-primary);color:var(--color-text-inverse);padding:var(--space-3) var(--space-4);border-radius:var(--radius-md);z-index:1000}
+    .shell{max-width:var(--content);margin:0 auto;padding:var(--space-4)}
+    .topbar{display:flex;justify-content:space-between;align-items:center;padding:var(--space-4) 0 var(--space-8)}
+    .brand{display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-sm);letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-muted)}
+    .brand svg{width:34px;height:34px;color:var(--color-primary)}
+    .theme-toggle{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid color-mix(in srgb, var(--color-text) 12%, transparent);border-radius:var(--radius-full);background:var(--color-surface);box-shadow:var(--shadow-sm)}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:var(--space-8);align-items:stretch}
+    .panel{background:color-mix(in srgb, var(--color-surface) 92%, white 8%);border:1px solid color-mix(in srgb, var(--color-text) 10%, transparent);border-radius:var(--radius-xl);box-shadow:var(--shadow-md)}
+    .hero-main{padding:clamp(var(--space-6),5vw,var(--space-12));display:flex;flex-direction:column;justify-content:space-between;gap:var(--space-8)}
+    .eyebrow{font-size:var(--text-xs);letter-spacing:.16em;text-transform:uppercase;color:var(--color-primary);font-weight:700}
+    h1{font-family:var(--font-display);font-size:clamp(2.75rem,6vw,5.25rem);line-height:0.98;max-width:10ch}
+    .lead{font-size:var(--text-lg);max-width:40ch;color:var(--color-text-muted)}
+    .contact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-4)}
+    .contact-card{padding:var(--space-4);border-radius:var(--radius-lg);background:var(--color-surface-offset);border:1px solid color-mix(in srgb, var(--color-text) 8%, transparent)}
+    .contact-card span{display:block;font-size:var(--text-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--color-text-faint);margin-bottom:var(--space-1)}
+    .hero-side{padding:var(--space-6);display:flex;flex-direction:column;gap:var(--space-6);justify-content:space-between}
+    .summary{padding-bottom:var(--space-6);border-bottom:1px solid var(--color-divider)}
+    .summary p{color:var(--color-text-muted);max-width:34ch}
+    .chips{display:flex;flex-wrap:wrap;gap:var(--space-2)}
+    .chip{padding:0.5rem 0.85rem;border-radius:var(--radius-full);background:var(--color-primary-highlight);color:var(--color-primary);font-size:var(--text-sm);font-weight:600}
+    main{display:grid;grid-template-columns:1.2fr .8fr;gap:var(--space-8);padding:var(--space-8) 0 var(--space-16)}
+    .stack{display:flex;flex-direction:column;gap:var(--space-8)}
+    section{padding:var(--space-6)}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:var(--space-4);margin-bottom:var(--space-5)}
+    h2{font-size:var(--text-xl);font-family:var(--font-display);line-height:1.05}
+    .section-note{font-size:var(--text-sm);color:var(--color-text-muted)}
+    .timeline{display:grid;gap:var(--space-5)}
+    .item{display:grid;grid-template-columns:auto 1fr;gap:var(--space-4);padding-top:var(--space-5);border-top:1px solid var(--color-divider)}
+    .item:first-child{padding-top:0;border-top:none}
+    .dot{width:12px;height:12px;border-radius:50%;background:var(--color-primary);margin-top:.5rem;box-shadow:0 0 0 6px color-mix(in srgb, var(--color-primary) 14%, transparent)}
+    .role-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--space-3);margin-bottom:var(--space-2)}
+    .role-title{font-weight:700;font-size:1.05rem}
+    .role-meta{color:var(--color-text-muted);font-size:var(--text-sm)}
+    .item ul{padding-left:1.1rem;color:var(--color-text-muted);display:grid;gap:var(--space-2)}
+    .item li::marker{color:var(--color-primary)}
+    .skill-list{display:grid;gap:var(--space-3)}
+    .skill{padding:var(--space-4);border-radius:var(--radius-lg);background:var(--color-surface-offset);border:1px solid color-mix(in srgb, var(--color-text) 8%, transparent)}
+    .skill strong{display:block;margin-bottom:var(--space-1)}
+    .edu-list{display:grid;gap:var(--space-4)}
+    .edu-item{padding:var(--space-4);border-radius:var(--radius-lg);background:var(--color-surface-offset)}
+    .edu-item strong{display:block}
+    .edu-item span{display:block;color:var(--color-text-muted);font-size:var(--text-sm)}
+    .footer-note{padding:var(--space-6);text-align:center;color:var(--color-text-muted);font-size:var(--text-sm)}
+    @media (max-width: 920px){
+      .hero, main{grid-template-columns:1fr}
+      h1{max-width:none}
+    }
+    @media (max-width: 640px){
+      .shell{padding:var(--space-3)}
+      .topbar{padding:var(--space-3) 0 var(--space-6)}
+      .hero-main,.hero-side,section{padding:var(--space-5)}
+      .contact-grid{grid-template-columns:1fr}
+      .role-head,.section-head{align-items:start}
+    }
+    @media (prefers-reduced-motion: reduce){*{scroll-behavior:auto;transition:none!important}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand">
+        <svg viewBox="0 0 48 48" aria-label="FM monogram" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 38V10h24" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+          <path d="M8 24h18" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+          <path d="M24 38V10l8 12 8-12v28" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Professional Resume</span>
+      </div>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </header>
+
+    <section class="hero">
+      <div class="panel hero-main">
+        <div>
+          <div class="eyebrow">Safety • Operations • Administration</div>
+          <h1>Fawn Martin</h1>
+        </div>
+        <p class="lead">Safety-focused dependable professional with experience across rail operations, oilfield support, medical administration, construction, roofing, and aviation.</p>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <span>Phone</span>
+            <div>+1 (780) 218-4654</div>
+          </div>
+          <div class="contact-card">
+            <span>Email</span>
+            <div><a href="mailto:Fawn.bowler@gmail.com">Fawn.bowler@gmail.com</a></div>
+          </div>
+        </div>
+      </div>
+      <aside class="panel hero-side">
+        <div class="summary">
+          <div class="section-head">
+            <h2>Profile</h2>
+          </div>
+          <p>Known for reliability, hazard awareness, and calm performance in fast-paced, high-responsibility environments. Strong communication, customer service, and team coordination skills support consistent results in both field and office settings.</p>
+        </div>
+        <div>
+          <div class="section-head">
+            <h2>Core Strengths</h2>
+          </div>
+          <div class="chips" aria-label="Key skills">
+            <span class="chip">Safety awareness</span>
+            <span class="chip">Hazard recognition</span>
+            <span class="chip">Incident reporting</span>
+            <span class="chip">Customer service</span>
+            <span class="chip">Team coordination</span>
+            <span class="chip">Office administration</span>
+            <span class="chip">Microsoft Word</span>
+            <span class="chip">Outlook</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <main id="content">
+      <div class="stack">
+        <section class="panel">
+          <div class="section-head">
+            <h2>Professional Experience</h2>
+            <div class="section-note">Hands-on experience across operations, transport, healthcare, and trades</div>
+          </div>
+          <div class="timeline">
+            <article class="item">
+              <div class="dot" aria-hidden="true"></div>
+              <div>
+                <div class="role-head">
+                  <div>
+                    <div class="role-title">Big Country Drilling — Parts</div>
+                    <div class="role-meta">Fort McMurray, AB</div>
+                  </div>
+                  <div class="role-meta">Oct 2025–Present · Seasonal (Oct–Mar)</div>
+                </div>
+                <ul>
+                  <li>Support parts operations in a fast-paced drilling environment by organizing, handling, and tracking parts and supplies for field operations.</li>
+                  <li>Maintain accuracy, safety, and timely movement of materials to support efficient day-to-day operations.</li>
+                </ul>
+              </div>
+            </article>
+            <article class="item">
+              <div class="dot" aria-hidden="true"></div>
+              <div>
+                <div class="role-head">
+                  <div>
+                    <div class="role-title">Canadian National Railway (CN) — Conductor</div>
+                    <div class="role-meta">Canada</div>
+                  </div>
+                  <div class="role-meta">Aug 2024–Aug 2025</div>
+                </div>
+                <ul>
+                  <li>Worked in rail operations with strong focus on safety, communication, coordination, and compliance with transportation regulations.</li>
+                  <li>Performed in a demanding environment requiring sustained alertness, discipline, and teamwork.</li>
+                </ul>
+              </div>
+            </article>
+            <article class="item">
+              <div class="dot" aria-hidden="true"></div>
+              <div>
+                <div class="role-head">
+                  <div>
+                    <div class="role-title">Big Country Drilling — Crew / Van Driver</div>
+                    <div class="role-meta">Fort McMurray, AB</div>
+                  </div>
+                  <div class="role-meta">Jan 2024–Oct 2025</div>
+                </div>
+                <ul>
+                  <li>Safely transported rig personnel to remote locations in varied weather and site conditions.</li>
+                  <li>Performed inspections and hazard assessments, and reported environmental, regulatory, and near-miss incidents.</li>
+                  <li>Participated in safety meetings, audits, and program maintenance.</li>
+                </ul>
+              </div>
+            </article>
+            <article class="item">
+              <div class="dot" aria-hidden="true"></div>
+              <div>
+                <div class="role-head">
+                  <div>
+                    <div class="role-title">Nottingham Medical Clinic — Medical Office Assistant</div>
+                    <div class="role-meta">Sherwood Park, AB</div>
+                  </div>
+                  <div class="role-meta">Apr 2021–Jan 2024</div>
+                </div>
+                <ul>
+                  <li>Supported six family doctors with scheduling, reception, patient communication, data entry, and records management.</li>
+                  <li>Coordinated referrals and diagnostic bookings, including CT and MRI appointments.</li>
+                  <li>Opened and closed the clinic and maintained exam room readiness for daily operations.</li>
+                </ul>
+              </div>
+            </article>
+            <article class="item">
+              <div class="dot" aria-hidden="true"></div>
+              <div>
+                <div class="role-head">
+                  <div>
+                    <div class="role-title">Dawson Wallace Construction Ltd — Labourer</div>
+                    <div class="role-meta">Edmonton, AB</div>
+                  </div>
+                  <div class="role-meta">Jan 2020–Apr 2021</div>
+                </div>
+                <ul>
+                  <li>Supported residential and commercial construction projects including site preparation, framing, drywall, and roofing.</li>
+                  <li>Used hand and power tools safely and effectively in active job-site environments.</li>
+                </ul>
+              </div>
+            </article>
+            <article class="item">
+              <div class="dot" aria-hidden="true"></div>
+              <div>
+                <div class="role-head">
+                  <div>
+                    <div class="role-title">SKP Roofing Inc. — Labourer</div>
+                    <div class="role-meta">Oshawa, ON</div>
+                  </div>
+                  <div class="role-meta">Jan 2018–Dec 2019</div>
+                </div>
+                <ul>
+                  <li>Performed roofing and cladding work on residential, commercial, and industrial properties.</li>
+                </ul>
+              </div>
+            </article>
+            <article class="item">
+              <div class="dot" aria-hidden="true"></div>
+              <div>
+                <div class="role-head">
+                  <div>
+                    <div class="role-title">First Air — Flight Attendant</div>
+                    <div class="role-meta">Edmonton, AB</div>
+                  </div>
+                  <div class="role-meta">Jan 2004–Mar 2013</div>
+                </div>
+                <ul>
+                  <li>Completed Transport Canada-certified Flight Attendant training with honors.</li>
+                  <li>Qualified to operate on Boeing 727-100/200, Boeing 737-200, Hawker Siddeley 748, and ATR 42 aircraft.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <div class="stack">
+        <section class="panel">
+          <div class="section-head">
+            <h2>Key Skills</h2>
+          </div>
+          <div class="skill-list">
+            <div class="skill"><strong>Safety & compliance</strong>Safety awareness, hazard recognition, and incident reporting.</div>
+            <div class="skill"><strong>Communication</strong>Strong communication, customer service, and team coordination.</div>
+            <div class="skill"><strong>Operational reliability</strong>Reliable and organized in physically demanding, high-pressure environments.</div>
+            <div class="skill"><strong>Administration</strong>Proficient in Microsoft Word, Outlook, and general office administration.</div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="section-head">
+            <h2>Education & Certifications</h2>
+          </div>
+          <div class="edu-list">
+            <div class="edu-item"><strong>Big Country Drilling Training</strong><span>Edmonton, AB · 2024</span><span>WHMIS, TDG, Standard First Aid with CPR and AED, H2S Alive, BSO/CSO, Wildlife Awareness Level 2, DROPS Awareness, and Fire Safety Training.</span></div>
+            <div class="edu-item"><strong>ProServe Liquor Staff Training</strong><span>Edmonton, AB · 2015</span><span>Certified in responsible alcohol service and provincial liquor legislation through AGLC’s ProServe program.</span></div>
+            <div class="edu-item"><strong>First Air Flight Attendant Training</strong><span>Edmonton, AB · 2004–2013</span><span>Transport Canada-certified training completed with honors; qualified on Boeing 727-100, Boeing 727-200, Boeing 737-200, Hawker Siddeley 748, and ATR 42 aircraft.</span></div>
+            <div class="edu-item"><strong>TELUS Employee Training Programs</strong><span>Edmonton, AB · 1997–2002</span><span>Internal training in telecommunications, data systems, and customer service operations with a 98%+ average across courses.</span></div>
+            <div class="edu-item"><strong>Marvel Business College</strong><span>Edmonton, AB · 1997</span><span>Diploma in Apprentice Hairstyling; licensed cosmetologist and make-up artist; graduated with honors.</span></div>
+            <div class="edu-item"><strong>Bev Facey Community High School</strong><span>Sherwood Park, AB · 1994</span><span>Graduated with honors.</span></div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div class="footer-note">Designed as a clean, web-style resume for easy sharing, printing, or exporting to PDF.</div>
+  </div>
+
+  <script>
+    (function(){
+      const root = document.documentElement;
+      const btn = document.querySelector('[data-theme-toggle]');
+      let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      const render = () => {
+        root.setAttribute('data-theme', theme);
+        btn.setAttribute('aria-label', 'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode');
+        btn.innerHTML = theme === 'dark'
+          ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+          : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+      };
+      render();
+      btn.addEventListener('click', () => { theme = theme === 'dark' ? 'light' : 'dark'; render(); });
+    })();
+  </script>
+</body>
+</html>
